@@ -1,0 +1,28 @@
+{
+  "name": "readme_generator",
+  "version": "1.0.0",
+  "description": "Readme file generator through the NPM inquirer package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alfrugo/README_Generator.git"
+  },
+  "keywords": [
+    "readme",
+    "node",
+    "js",
+    "inquirer"
+  ],
+  "author": "Alfredo Diez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alfrugo/README_Generator/issues"
+  },
+  "homepage": "https://github.com/Alfrugo/README_Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}

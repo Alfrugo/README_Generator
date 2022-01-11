@@ -4,6 +4,7 @@
   "description": "Readme file generator through the NPM inquirer package",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

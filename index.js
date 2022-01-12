@@ -1,37 +1,55 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const generateReadme = require('./src/page-template.js');
+const generateMarkdown = require('./generateMarkdown.js');
 const { generateKey } = require('crypto');
 
 
-const generateReadme = (readMeData) => {
-  return `
-  This is the markdown format
-  #${readMeData.title}
 
-  ##${readMeData.description}
+// const generateReadme = (readMeData) => {
+//   return `
+// This is the markdown format
+// #${readMeData.title}
 
-  ##${readMeData.installation}
+// ## Description
 
-  ##${readMeData.usage}
+// ${readMeData.description}
 
-  ##${readMeData.contribution}
+// ## Table of Contents
 
-  ##${readMeData.test}
-
-  ##${readMeData.licensing}
-
-  ##${readMeData.githubUser}
-
-  ##${readMeData.email}
+// * [Installation](#installation)
+// * [Usage](#usage)
+// * [Credits](#credits)
+// * [License](#license)
 
 
-Ole 
+// ## Installation
+  
+// ${readMeData.installation}
 
+// ## Usage
+  
+// ${readMeData.usage}
 
-  `;
-};
+// ## Contribution 
+  
+// ${readMeData.contribution}
+
+// ## Tests 
+  
+// ${readMeData.test}
+
+// ## License
+  
+// ${readMeData.licensing}
+
+  
+// ##${readMeData.githubUser}
+
+// ##${readMeData.email}
+
+//   `;
+// };
 
 // TODO: Create an array of questions for user input
 
@@ -163,7 +181,7 @@ const questions = () => {
         console.log ("here's results title: " + results.title) // testing that it works
 
         const fileName = `./README-OUTPUT/${results.title.split(' ').join('').toLowerCase()}.md`
-        fs.writeFile(fileName, generateReadme (results), {}, error => {
+        fs.writeFile(fileName, generateMarkdown (results), {}, error => {
             if (error) {
                 console.error(error);
             } else { 

@@ -1,6 +1,16 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+// const generateReadme = require('./src/page-template.js');
+const { generateKey } = require('crypto');
+
+
+const generateReadme = (readMeData) => {
+  return `
+  This is the markdown format
+    
+  `;
+};
 
 // TODO: Create an array of questions for user input
 
@@ -132,14 +142,19 @@ const questions = () => {
               }
         },
 
+      ]).then(results => {
+        console.log("here are the results without stringify: " + results);
 
+// Call function to generate README format 
 
+        // const readMe = generateReadme(results);
 
+// TODO: Create a function to write README file
+        const answersData = JSON.stringify(results);
+        console.log (generateReadme (answersData));
 
-    ]).then(results => {
-        console.log(results);
-        const fileName = `./${results.title.split(' ').join('').toLowerCase()}.md`
-        fs.writeFile(fileName, JSON.stringify(results), {}, error => {
+        const fileName = `./README-OUTPUT/${results.title.split(' ').join('').toLowerCase()}.md`
+        fs.writeFile(fileName, generateReadme (answersData), {}, error => {
             if (error) {
                 console.error(error);
             } else { 
@@ -148,9 +163,6 @@ const questions = () => {
         })
     });
 }
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {}

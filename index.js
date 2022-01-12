@@ -8,7 +8,28 @@ const { generateKey } = require('crypto');
 const generateReadme = (readMeData) => {
   return `
   This is the markdown format
-    
+  #${readMeData.title}
+
+  ##${readMeData.description}
+
+  ##${readMeData.installation}
+
+  ##${readMeData.usage}
+
+  ##${readMeData.contribution}
+
+  ##${readMeData.test}
+
+  ##${readMeData.licensing}
+
+  ##${readMeData.githubUser}
+
+  ##${readMeData.email}
+
+
+Ole 
+
+
   `;
 };
 
@@ -116,19 +137,6 @@ const questions = () => {
               }
         },
         {
-            name: 'githubUser',
-            type: 'input',
-            message: 'What is your Github username: ',
-            validate: userInput => {
-                if (userInput) {
-                  return true;
-                } else {
-                  console.log('Please enter your Github user!!');
-                  return false;
-                }
-              }
-        },
-        {
             name: 'email',
             type: 'input',
             message: 'Enter your email address: ',
@@ -150,11 +158,12 @@ const questions = () => {
         // const readMe = generateReadme(results);
 
 // TODO: Create a function to write README file
-        const answersData = JSON.stringify(results);
-        console.log (generateReadme (answersData));
+        // const answersData = JSON.stringify(results);   this was messing me up !!
+
+        console.log ("here's results title: " + results.title) // testing that it works
 
         const fileName = `./README-OUTPUT/${results.title.split(' ').join('').toLowerCase()}.md`
-        fs.writeFile(fileName, generateReadme (answersData), {}, error => {
+        fs.writeFile(fileName, generateReadme (results), {}, error => {
             if (error) {
                 console.error(error);
             } else { 

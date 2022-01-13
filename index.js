@@ -5,52 +5,6 @@ const generateMarkdown = require('./generateMarkdown.js');
 const { generateKey } = require('crypto');
 
 
-
-// const generateReadme = (readMeData) => {
-//   return `
-// This is the markdown format
-// #${readMeData.title}
-
-// ## Description
-
-// ${readMeData.description}
-
-// ## Table of Contents
-
-// * [Installation](#installation)
-// * [Usage](#usage)
-// * [Credits](#credits)
-// * [License](#license)
-
-
-// ## Installation
-  
-// ${readMeData.installation}
-
-// ## Usage
-  
-// ${readMeData.usage}
-
-// ## Contribution 
-  
-// ${readMeData.contribution}
-
-// ## Tests 
-  
-// ${readMeData.test}
-
-// ## License
-  
-// ${readMeData.licensing}
-
-  
-// ##${readMeData.githubUser}
-
-// ##${readMeData.email}
-
-//   `;
-// };
-
 // TODO: Create an array of questions for user input
 
 const questions = () => {
@@ -135,10 +89,10 @@ const questions = () => {
         },
 
         {
-            name: 'licensing',
+            name: 'license',
             type: 'list',
             message: 'What type of license does your project have: ',
-            choices: ['Community', 'MIT', 'GNU GPLv3']
+            choices: ['Community', 'MIT','Apache 2.0', 'Boost', 'BSD 3-Clause', 'Eclipse', 'GNU GPL', 'none']
         },
 
         {
@@ -171,12 +125,8 @@ const questions = () => {
       ]).then(results => {
         console.log("here are the results without stringify: " + results);
 
-// Call function to generate README format 
-
-        // const readMe = generateReadme(results);
 
 // TODO: Create a function to write README file
-        // const answersData = JSON.stringify(results);   this was messing me up !!
 
         console.log ("here's results title: " + results.title) // testing that it works
 

@@ -7,8 +7,7 @@ const { generateKey } = require('crypto');
 
 // TODO: Create an array of questions for user input
 
-const questions = () => {
-    return inquirer.prompt([
+const questions = [
         {
             name: 'title',
             type: 'input',
@@ -122,13 +121,20 @@ const questions = () => {
               }
         },
 
-      ]).then(results => {
-        console.log("here are the results without stringify: " + results);
+      ]
 
 
 // TODO: Create a function to write README file
 
-        console.log ("here's results title: " + results.title) // testing that it works
+        
+    
+
+
+// TODO: Create a function to initialize app
+function init() {
+    inquirer.prompt(questions).then(results => {
+      console.log("here are the results without stringify: " + results);
+      console.log ("here's results title: " + results.title) // testing that it works
 
         const fileName = `./README-OUTPUT/${results.title.split(' ').join('').toLowerCase()}.md`
         fs.writeFile(fileName, generateMarkdown (results), {}, error => {
@@ -138,14 +144,11 @@ const questions = () => {
                 console.log('Success!')
             }
         })
-    });
+})
 }
-
-// TODO: Create a function to initialize app
-function init() {}
 
 // Function call to initialize app
 init();
 
-questions();
+// questions();
 

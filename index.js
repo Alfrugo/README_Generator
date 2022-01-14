@@ -133,15 +133,15 @@ const questions = [
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then(results => {
-      console.log("here are the results without stringify: " + results);
-      console.log ("here's results title: " + results.title) // testing that it works
+      //console.log("here are the results without stringify: " + results);
+      //console.log ("here's results title: " + results.title) // testing that it works
 
         const fileName = `./README-OUTPUT/${results.title.split(' ').join('').toLowerCase()}.md`
         fs.writeFile(fileName, generateMarkdown (results), {}, error => {
             if (error) {
                 console.error(error);
             } else { 
-                console.log('Success!')
+                console.log('Your Readme file has been created successfully. Please check the folder README-OUTPUT')
             }
         })
 })

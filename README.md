@@ -1,10 +1,16 @@
-User Story
+# README GENERATOR
+
+## Description 
+
+This application generates a Readme.md file through command line questions. It utilizes Node JS with the Inquirer dependency. See Package.json file for details. 
+
+## User Story
 
 AS A developer
 I WANT a README generator
 SO THAT I can quickly create a professional README for a new project
 
-Acceptance Criteria
+## Acceptance Criteria
 
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for information about my application repository
@@ -21,3 +27,27 @@ WHEN I enter my email address
 THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
 WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
+
+## Requirements
+
+Prior to execute make sure you have Node JS and NPM Inquirer installed. 
+
+## Instructions
+
+To execute type node index.js in the command line
+
+This is what the questions should look like:
+
+![SAMPLE-GRAB](https://user-images.githubusercontent.com/36056407/149549147-bcde7e6b-b553-4407-a850-6d7406260a85.JPG)
+
+
+See below a sample of the readme file it generates:
+
+![sample-output](https://user-images.githubusercontent.com/36056407/149549609-515d54c9-6481-4e9c-bfe4-5c490baf1d10.jpg)
+
+
+
+This project was created by [Alfredo Diez](https://alfredo-diez.com)  - Please, [contact me](mailto:diez_alfredo@hotmail.com) if you have further questions. 
+
+Repo link [https://github.com/Alfrugo/README_Generator](https://github.com/Alfrugo/README_Generator) 
+ 

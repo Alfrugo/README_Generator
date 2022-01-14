@@ -71,10 +71,14 @@ ${readMeData.test}
 
 ${renderLicenseSection(readMeData.license)}
 
-  
-##${readMeData.githubUser}
 
-##${readMeData.email}
+
+  
+### If you have any questions, please contact me at [${readMeData.email}](mailto://${readMeData.email})
+
+
+### Visit my GitHub profile for more fun repos: [github.com/${readMeData.githubUser}](https://github.com/${readMeData.githubUser})
+
 
   `;
 };
